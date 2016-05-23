@@ -59,7 +59,6 @@ angular.module('app').config(['$routeProvider', function (routeProvider) {
                 $scope.ruta = $location.path();
                 $rootScope.rutas = $location.path().split('/');
                 $rootScope.rutas.splice(0, 1);
-
                 $scope.id = $location.search().id;
 
                 if ($location.path() === '/lenguajes') {
@@ -73,7 +72,6 @@ angular.module('app').config(['$routeProvider', function (routeProvider) {
                     }, 2000);
                 }
 
-
                 if ($location.path() === '/lenguajes/nuevo') {
                     $scope.lenguaje = {puntuacion: 0};
                 }
@@ -84,6 +82,7 @@ angular.module('app').config(['$routeProvider', function (routeProvider) {
 
                 $scope.nuevoLenguaje = function () {
                     $rootScope.lenguajes.push($scope.lenguaje);
+                    $cookies.putObject('lenguajes', $rootScope.lenguajes);
                     $location.path('/lenguajes');
                 };
 
@@ -114,6 +113,7 @@ angular.module('app').config(['$routeProvider', function (routeProvider) {
                     console.log(index);
                     index = index || $scope.seleccionado.id;
                     $rootScope.lenguajes.splice(index, 1);
+                    $cookies.putObject('lenguajes', $rootScope.lenguajes);
                     $scope.ocultarEliminar();
                 };
 
