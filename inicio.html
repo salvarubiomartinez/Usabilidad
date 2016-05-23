@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<div class="jumbotron">
+    <h2>{{usuarioRegistrado}} Bienvenido al Ranking de lenguajes de programción</h2>
+    <br>
+    <br>
+    <form class="" ng-show="!usuarioRegistrado">
+        <div class="form-group">
+            <label for="usuario">Introduze tu nombre</label>
+            <input type="text" id="usuario" ng-model="usuario" class="form-control">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" ng-click="registro(usuario)">Enviar</button>
+        </div>
+    </form>
+</div>
+
+
+<div class="panel">
+    <div class="panel-heading">
+        <h2>Mapa del sitio</h2>
+    </div>
+    <div class="panel-body">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <a href="#/lenguajes">Aquí</a> podrás dar de alta y modificar los lenguajes
+            </li>
+            <li class="list-group-item">
+                <a href="#/puntua">Aquí</a> podrás puntuar tu lenguaje favorito
+            </li>
+            <li class="list-group-item">
+                <a href="#/ranking">Aquí</a> puedes ver le ranking
+            </li>
+        </ul>
+        <p></p>
+    </div>
+    
+</div>
+

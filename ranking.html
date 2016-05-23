@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<h1>Ranking de lenguajes de programción</h1>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Lenguaje</th>
+            <th>Puntuación</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="lenguaje in lenguajes | orderBy: '-puntuacion'">
+            <td>{{lenguaje.nombre}}</td>
+            <td>{{lenguaje.puntuacion}}</td>
+        </tr>
+    </tbody>
+</table>

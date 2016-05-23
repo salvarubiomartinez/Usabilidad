@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<h2>Puntua tu leguaje preferido</h2>
+<form name="seleccion">
+    <div class="form-group">
+        <label for="selected">Seleccione el lenguaje</label>
+        <select class="form-control" id="selected" name="selected" ng-model="selected" required="">
+            <option value="">---Por favor seleccione---</option>
+            <option ng-repeat="lenguaje in lenguajes"  value="{{$index}}">{{lenguaje.nombre}}</option>
+        </select>
+    </div>
+</form>
+
+<div class="form-group">
+    <button ng-click="sube(selected)" class="btn btn-success" data-toggle="tooltip" title="Si clicas aquí aumentarás un punto la clasificación del lenguaje"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span></button>
+    <button ng-click="baja(selected)" class="btn btn-danger" data-toggle="tooltip" title="Si clicas aquí disminuirás un punto la clasificación del lenguaje"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span></button>
+</div>
+
+<p class="alert alert-warning" ng-show="!selected">Ha de seleccionar una opción</p>
+
+<script>
+    $('select').select2();
+    $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
+</script>

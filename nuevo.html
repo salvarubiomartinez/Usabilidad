@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<div class="alert alert-success collapse">
+    Los cambios se guardaron con éxito. 
+</div>
+<button class="btn btn-success" ng-click="reset()" title="deshacer"><i class="fa fa-undo" aria-hidden="true"></i></button>
+<br>
+<br>
+<form name="form">
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" ng-model="lenguaje.nombre" class="form-control" id="nombre" placeholder="Introduzca el nombre" required>
+    </div>
+    <div class="form-group">
+        <label for="descripcion">Descripción</label>
+        <textarea rows="4" ng-model="lenguaje.descripcion" class="form-control" id="descripcion" placeholder="Introduzca una descripción"></textarea>
+    </div>
+
+    <button ng-if="ruta === '/lenguajes/nuevo'" ng-click="nuevoLenguaje()" ng-disabled="!form.$valid" class="btn btn-primary">Añadir</button>
+    <button ng-if="ruta === '/lenguajes/editar'" ng-click="editarLenguaje()" ng-disabled="!form.$valid" class="btn btn-primary">Editar</button> |
+    <a href="#/lenguajes" class="">Cancelar</a>
+</form>
+
+<br>
+<div class="alert alert-warning" ng-show="!form.$valid">
+    El campo nombre es obligatorio.
+</div>
