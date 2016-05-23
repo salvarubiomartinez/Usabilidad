@@ -56,14 +56,11 @@ angular.module('app').config(['$routeProvider', function (routeProvider) {
         .controller('mainController', ['$scope', '$rootScope', '$location', '$timeout', '$cookies',
             function ($scope, $rootScope, $location, $timeout, $cookies) {
 
-                //console.log($location.path());
                 $scope.ruta = $location.path();
                 $rootScope.rutas = $location.path().split('/');
                 $rootScope.rutas.splice(0, 1);
-                //console.log($rootScope.rutas);
 
                 $scope.id = $location.search().id;
-                //$scope.selected = -1 ;
 
                 if ($location.path() === '/lenguajes') {
                     $('.loader-inner').show();
@@ -141,17 +138,4 @@ angular.module('app').config(['$routeProvider', function (routeProvider) {
                     $cookies.put('usuario', $rootScope.usuarioRegistrado);
                     console.log($rootScope.usuario);
                 };
-
-
-
             }]);
-//        .controller('incioController', function ($rootScope, $location) {
-//            $rootScope.rutas = $location.path().split('/');
-//            $rootScope.rutas.splice(0, 1);
-//            console.log($rootScope.rutas);
-//        }).
-//        controller('puntuarController', function ($rootScope, $scope, $location) {
-//            $rootScope.rutas = $location.path().split('/');
-//            $rootScope.rutas.splice(0, 1);
-//            console.log($rootScope.rutas);
-//        });
